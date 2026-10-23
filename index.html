@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Website</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            width: 100%;
+            height: 100px;
+            position: sticky;
+            top: 0px;
+            z-index: 1000;
+            background-color: white;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        header nav {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 70px;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+            display: block;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        header nav ul li a {
+            color: #555555;
+            text-decoration: none;
+            padding: 10px 5px;
+            display: block;
+        }
+
+        header nav ul li a:hover {
+            color: black;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero-section {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section img {
+            width: 100%;
+            height: 500px;
+            display: block;
+            object-fit: cover;
+            background-color: #dddddd;
+        }
+
+        .hero-section .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-section .content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .hero-section .content p {
+            line-height: 25px;
+            margin-bottom: 25px;
+        }
+
+        .hero-section .content button {
+            width: 120px;
+            height: 40px;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero-section .content button:hover {
+            background-color: black;
+            color: white;
+        }
+
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            width: 100%;
+            background-color: white;
+            padding: 70px 80px;
+            text-align: center;
+        }
+
+        .products>h2 {
+            font-size: 28px;
+            margin-bottom: 50px;
+        }
+
+        .products-list {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            text-align: center;
+        }
+
+        .product-1,
+        .product-2,
+        .product-3 {
+            width: 30%;
+            padding: 25px;
+        }
+
+        .product-1 img,
+        .product-2 img,
+        .product-3 img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .product-1 h3,
+        .product-2 h3,
+        .product-3 h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .product-1 p,
+        .product-2 p,
+        .product-3 p {
+            color: #666666;
+            line-height: 24px;
+        }
+
+        .product-1:hover,
+        .product-2:hover,
+        .product-3:hover {
+            background-color: #f5f5f5;
+        }
+
+
+        /* ================= ABOUT US ================= */
+
+        .about-us {
+            width: 100%;
+            min-height: 400px;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 60px 100px;
+        }
+
+        .about-us .left {
+            width: 45%;
+            text-align: left;
+            padding: 20px;
+        }
+
+        .about-us .left h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .about-us .left p {
+            color: #666666;
+            line-height: 25px;
+        }
+
+        .about-us .right {
+            width: 45%;
+            text-align: center;
+        }
+
+        .about-us .right img {
+            width: 100%;
+            max-width: 450px;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            margin: auto;
+        }
+
+        .about-us .right img:hover {
+            opacity: 0.9;
+        }
+
+
+        /* ================= REVIEW ================= */
+
+        .review {
+            width: 100%;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 50px;
+            background-color: white;
+        }
+
+        .review img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .review img:hover {
+            opacity: 0.8;
+        }
+
+        .review h2 {
+            margin-bottom: 15px;
+        }
+
+        .review p {
+            color: #666666;
+            line-height: 24px;
+        }
+
+
+        /* ================= SUBSCRIPTION ================= */
+
+        .subscription-bar {
+            width: 100%;
+            height: 100px;
+            background-color: rgb(67, 203, 67);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .subscription-bar form {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .subscription-bar input {
+            width: 300px;
+            height: 40px;
+            padding: 10px;
+            border: 2px solid white;
+            background-color: rgb(67, 203, 67);
+            color: white;
+            outline: none;
+        }
+
+        .subscription-bar input::placeholder {
+            color: white;
+        }
+
+        .subscription-bar input:focus {
+            background-color: white;
+            color: black;
+        }
+
+        .subscription-bar button {
+            width: 120px;
+            height: 40px;
+            border: none;
+            background-color: white;
+            color: rgb(67, 203, 67);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .subscription-bar button:hover {
+            background-color: black;
+            color: white;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            width: 100%;
+            min-height: 220px;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 50px 80px;
+        }
+
+        footer div {
+            width: 30%;
+            padding: 10px;
+        }
+
+        footer h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            color: #cccccc;
+            line-height: 25px;
+        }
+
+        footer ul li a {
+            color: grey;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        footer ul li a:hover {
+            color: green;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            color: black;
+            font-size: 18px;
+        }
+
+        .social-icons a:hover {
+            color: rgb(67, 203, 67);
+        }
+
+
+        /* ================= COPYRIGHT ================= */
+
+        .copyright-bar {
+            width: 100%;
+            height: 40px;
+            background-color: black;
+            border-top: 1px solid #333333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .copyright-bar p {
+            color: #cccccc;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                <img src="Photo1.png" alt="Logo">
+            </div>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <div class="hero-section">
+
+        <img src="hero-background-image.png" alt="Background Image">
+
+        <div class="content">
+
+            <h2>WE HELP YOUR BUSINESS</h2>
+
+            <p>
+                It is a long established fact that a reader will be distracted by <br>
+                the readable content of a page when looking at its layout.
+            </p>
+
+            <button>LEARN MORE</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <div class="products">
+
+        <h2>OUR PRODUCT</h2>
+
+        <div class="products-list">
+
+            <div class="product-1">
+
+                <img src="OUR-PRODUCT.png" alt="Product 1">
+
+                <h3>SEO</h3>
+
+                <p>
+                    It is a long established<br>
+                    fact that a reader will<br>
+                    be distracted by the
+                </p>
+
+            </div>
+
+
+            <div class="product-2">
+
+                <img src="OUR-PRODUCT.png" alt="Product 2">
+
+                <h3>BRANDING</h3>
+
+                <p>
+                    It is a long established<br>
+                    fact that a reader will<br>
+                    be distracted by the
+                </p>
+
+            </div>
+
+
+            <div class="product-3">
+
+                <img src="OUR-PRODUCT.png" alt="Product 3">
+
+                <h3>LOGO</h3>
+
+                <p>
+                    It is a long established<br>
+                    fact that a reader will<br>
+                    be distracted by the
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ABOUT US ================= -->
+
+    <div class="about-us">
+
+        <div class="left">
+
+            <h2>ABOUT US</h2>
+
+            <p>
+                It is a long established<br>
+                fact that a reader will<br>
+                be distracted by the<br>
+                readable content of a page when<br>
+                looking at its layout.
+            </p>
+
+        </div>
+
+
+        <div class="right">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ58GioIL4nrKzM1Wv6mf5gSjGLBCFP3GGKTQ9cMTSxLg&s=10"
+                alt="About Us">
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= REVIEW ================= -->
+
+    <div class="review">
+
+        <img src="jon deo.png" alt="Jon Deo">
+
+        <div>
+
+            <h2>JON DEO</h2>
+
+            <p>
+                It is a long established fact that a reader will be<br>
+                distracted by the readable content of a page<br>
+                when looking at its layout.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SUBSCRIPTION ================= -->
+
+    <div class="subscription-bar">
+
+        <form>
+
+            <input type="email" placeholder="Email ID">
+
+            <button type="submit">Subscribe</button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+
+        <!-- About Company -->
+
+        <div>
+
+            <h3>About Company</h3>
+
+            <ul>
+
+                <li>
+                    It is a long established fact<br>
+                    that a reader will be distrac-<br>
+                    ted by the readable content<br>
+                    of a page when looking at its<br>
+                    layout.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Quick Links -->
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li>
+                    <a href="#">Home</a>
+                </li>
+
+                <li>
+                    <a href="#">Product</a>
+                </li>
+
+                <li>
+                    <a href="#">Pricing</a>
+                </li>
+
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Contact Us -->
+
+        <div>
+
+            <h3>Contact Us</h3>
+
+            <ul>
+
+                <li>
+                    <a href="mailto:info@company.com">
+                        info@company.com
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tel:+9107900000000">
+                        +91 079 00000000
+                    </a>
+                </li>
+
+                <li class="social-icons">
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-tumblr"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-google-plus-g"></i>
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </footer>
+
+
+    <!-- ================= COPYRIGHT ================= -->
+
+    <div class="copyright-bar">
+
+        <p>
+            Copyright © 2018 - Code and Design. All Rights Reserved
+        </p>
+
+    </div>
+
+
+</body>
+
+</html>
